@@ -1,7 +1,7 @@
 FROM junhanlin/ubuntu-git-java-maven
 VOLUME /tmp
 
-RUN git clone https://github.com/alexturcot/example-docker-build-git-project.git
+RUN git clone https://github.com/alexturcot/helloworld-docker-pull-git.git
 WORKDIR example-docker-build-git-project
 RUN mvn install
 
