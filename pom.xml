@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.alexbt</groupId>
-	<artifactId>helloworld-spring-boot-pull-git</artifactId>
+	<artifactId>sample-spring-boot-pull-git</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
