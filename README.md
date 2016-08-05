@@ -1,8 +1,6 @@
 Dockerfile - building a git project
 -------------------
-This project showcases how you can use Docker to fetch a git project, build it and Dockerize it.
-
-The Dockerfile I'm using is as simple as this:
+This project showcases how you can use Docker to fetch a git project, build it and Dockerize it. The Dockerfile I'm using is as simple as this:
 ```
 FROM junhanlin/ubuntu-git-java-maven
 VOLUME /tmp
@@ -18,8 +16,7 @@ ENTRYPOINT ["java","-jar","/example-docker-build-git-project/target/app.jar"]
 ````
 
 
-In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile
-Using his Dockerfile as a foundation, all that is left in my Dockerfile is to:
+In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that is left in to do in mine is to:
 
 * fetch the project from git: RUN git clone https://github.com/alexturcot/helloworld-docker-pull-git.git
 * build it with maven: RUN mvn install
@@ -31,12 +28,14 @@ Step by step - Ooh baby
 
 To install docker, follow their instrution: https://docs.docker.com/engine/installation
 
-**build a docker image**
+**Build this docker image**
 
 The first step is to create a Dockerfile. You may download the Dockerfile from this repository and drop it where you wish.
-Then go into the folder containing your Dockerfile (or the one from this reository) and type:
+Then go into the folder containing the Dockerfile and type:
 
     $ docker build -t example-spring-boot-docker:latest .
+
+This builds the image named *example-spring-boot-docker* using the Dockerfile in current directory, with tag *latest*.
 
 ```
 Sending build context to Docker daemon 160.8 kB
