@@ -1,8 +1,8 @@
 Dockerfile - building a git project
 -------------------
-This project is a showcase of a dockerfile to clone a git project, build it and package:
+This project showcases how you can use Docker to fetch a git project, build it and Dockerize it.
 
-this is the short version:
+this is the short version of the Dockerfile I'm using to achieve that:
 ```
 FROM junhanlin/ubuntu-git-java-maven
 VOLUME /tmp
@@ -16,7 +16,9 @@ RUN mv *.jar app.jar
 
 ENTRYPOINT ["java","-jar","/example-docker-build-git-project/target/app.jar"]
 ````
-To perform the required operations, the image needs git, jdk8 and maven. I looked around and found FROM junhanlin/ubuntu-git-java-maven's Dockerfile
+
+
+I say this is the short version because, to perform the required operations, the image needs git, jdk8 and maven. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile
 Using his Dockerfile as a foundation, all that is left is to:
 
 * fetch the project from git: RUN git clone https://github.com/alexturcot/helloworld-docker-pull-git.git
