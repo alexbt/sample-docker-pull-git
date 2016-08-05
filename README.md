@@ -32,6 +32,7 @@ Step by step - Ooh baby
 To install docker, follow their instrution: https://docs.docker.com/engine/installation
 
 **build a docker image**
+
 The first step is to create a Dockerfile. You may download the Dockerfile from this repository and drop it where you wish.
 Then go into the folder containing your Dockerfile (or the one from this reository) and type:
 
@@ -69,6 +70,8 @@ example-spring-boot-docker        latest              226b42be11a0        3 minu
 junhanlin/ubuntu-git-java-maven   latest              c0e8627e844e        12 weeks ago        790.7 MB
 ```
 
+** Launch your container **
+
 To launch the container (a running image is referred to as a container, kind of like a Class and an Object)
 
     $ docker run -e spring_profiles_active=dev -p 8080:8080 -i -t example-spring-boot-docker:latest
@@ -78,7 +81,3 @@ In my case, the entrypoint of my container is a spring boot application.
 * -p 8080:8080 is to open port on the docker container, so that I can reach it from my computer.
 
 You can browse to http://localhost:8080/docker, to access the dockerized application. That's it.
-
-
-For info, many images are available on https://hub.docker.com. If you find one you like, you may fetch it:
-    $ docker pull mysql
