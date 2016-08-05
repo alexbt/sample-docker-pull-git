@@ -26,7 +26,7 @@ Using his Dockerfile as a foundation, all that is left in my Dockerfile is to:
 * launch the application at startup: ENTRYPOINT ["java","-jar","/example-docker-build-git-project/target/app.jar"]
 
 
-Step by step
+Step by step - Ooh baby
 -------------------
 
 To install docker, follow their instrution: https://docs.docker.com/engine/installation
