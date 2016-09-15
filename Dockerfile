@@ -1,6 +1,6 @@
 FROM junhanlin/ubuntu-git-java-maven
 VOLUME /tmp
-ENV project_name sample-docker-pull-git
+ENV sample-spring-boot-data-mongodb-embedded
 
 RUN git clone https://github.com/alexturcot/${project_name}.git
 WORKDIR ${project_name}
