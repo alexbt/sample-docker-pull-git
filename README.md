@@ -16,7 +16,7 @@ ENTRYPOINT ["java","-jar","/sample-spring-boot-data-jpa-embedded/target/app.jar"
 ````
 
 
-In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that is left to do in mine is to:
+In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that was left to do in mine is to:
 
 * fetch the project from git: RUN git clone https://github.com/alexturcot/sample-spring-boot-data-jpa-embedded.git
 * build it with maven: RUN mvn install
