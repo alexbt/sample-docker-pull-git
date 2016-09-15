@@ -16,7 +16,7 @@ ENTRYPOINT ["java","-jar","/sample-spring-boot-data-jpa-embedded/target/app.jar"
 ````
 
 
-In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that is left in to do in mine is to:
+In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that is left to do in mine is to:
 
 * fetch the project from git: RUN git clone https://github.com/alexturcot/sample-spring-boot-data-jpa-embedded.git
 * build it with maven: RUN mvn install
@@ -78,7 +78,7 @@ To launch the container (a running image is referred to as a container, kind of 
     $ docker run -e spring_profiles_active=dev -p 8080:8080 -i -t sample-spring-boot-data-jpa-embedded:latest
 
 In my case, the entrypoint of my image is a spring boot application.
-* -e spring_profiles_active=dev  is to provide set a spring profile
+* -e spring_profiles_active=dev  is to provide a spring profile
 * -p 8080:8080 is to open port on the docker container, so that I can reach it from my computer.
 
 You can browse to `http://localhost:8080/jpa/repo`, to access the dockerized application. That's it.
