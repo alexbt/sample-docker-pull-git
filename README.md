@@ -19,9 +19,9 @@ ENTRYPOINT ["java","-jar","/${project_name}/target/app.jar"]
 
 In order to perform the *git clone* and *mvn install*, the image needs to have git installed, jdk8 and maven as well. I looked around and found **junhanlin/ubuntu-git-java-maven**'s Dockerfile. Using his Dockerfile as a foundation, all that is left in to do in mine is to:
 
-* fetch the project from git: RUN git clone https://github.com/alexturcot/helloworld-docker-pull-git.git
+* fetch the project from git: RUN git clone https://github.com/alexturcot/sample-spring-boot-data-mongodb-embedded.git
 * build it with maven: RUN mvn install
-* launch the application at startup: ENTRYPOINT ["java","-jar","/example-docker-build-git-project/target/app.jar"]
+* launch the application at startup: ENTRYPOINT ["java","-jar","/sample-spring-boot-data-mongodb-embedded/target/app.jar"]
 
 
 Step by step - Ooh baby
@@ -34,7 +34,7 @@ To install docker, follow their instrution: https://docs.docker.com/engine/insta
 The first step is to create a Dockerfile. You may download the Dockerfile from this repository and drop it where you wish.
 Then go into the folder containing the Dockerfile and type:
 
-    $ docker build -t example-spring-boot-docker:latest .
+    $ docker build -t sample-spring-boot-data-mongodb-embedded:latest .
 
 This builds the image named *example-spring-boot-docker* using the Dockerfile in current directory, with tag *latest*.
 
@@ -67,16 +67,16 @@ Once it's done, you can view the images added to your local repository:
     $ docker images
 
 ```
-REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
-example-spring-boot-docker        latest              226b42be11a0        3 minutes ago       871.2 MB
-junhanlin/ubuntu-git-java-maven   latest              c0e8627e844e        12 weeks ago        790.7 MB
+REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+sample-spring-boot-data-mongodb-embedded    latest              226b42be11a0        3 minutes ago       871.2 MB
+junhanlin/ubuntu-git-java-maven             latest              c0e8627e844e        12 weeks ago        790.7 MB
 ```
 
 **Launching your container**
 
 To launch the container (a running image is referred to as a container, kind of like a Class and an Object)
 
-    $ docker run -e spring_profiles_active=dev -p 8080:8080 -i -t example-spring-boot-docker:latest
+    $ docker run -e spring_profiles_active=dev -p 8080:8080 -i -t sample-spring-boot-data-mongodb-embedded:latest
 
 In my case, the entrypoint of my image is a spring boot application.
 * -e spring_profiles_active=dev  is to provide set a spring profile
